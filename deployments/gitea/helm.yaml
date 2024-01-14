@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: gitea
+---
+apiVersion: helm.cattle.io/v1
+kind: HelmChart
+metadata:
+  name: gitea
+  namespace: gitea
+spec:
+  repo: https://dl.gitea.com/charts/
+  chart: gitea
+  version: 9.5.1
