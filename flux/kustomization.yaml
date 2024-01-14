@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 5m0s
-  path: ./deployments
+  path: ./cluster-components
   prune: true
   retryInterval: 2m0s
   sourceRef:
