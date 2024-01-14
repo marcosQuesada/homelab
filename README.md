@@ -5,5 +5,6 @@ WIP
 ## Stack
 - Flux2
 - Gitea
+- ArgoCD
 
 

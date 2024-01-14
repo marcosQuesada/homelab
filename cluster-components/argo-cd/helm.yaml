@@ -1,0 +1,32 @@
+apiVersion: helm.cattle.io/v1
+kind: HelmChart
+metadata:
+  name: argocd
+  namespace: argocd
+spec:
+  repo: https://argoproj.github.io/argo-helm
+  chart: argo-cd
+  version: 5.52.0
+  targetNamespace: argocd
+  createNamespace: true
+  valuesContent: |-
+    server:
+      dex:
+        enabled: false
+      extraArgs:
+        - --insecure        
+      ingress:
+        enabled: true
+        ingressClassName: nginx
+        annotations:
+          kubernetes.io/ingress.class: nginx
+        hosts:
+          - argo-cd.k3s.homelab.hack
+        paths:
+          - /
+        tls: 
+          - secretName: argo-cd-local-tls
+            hosts:
+              - argo-cd.k3s.homelab.hack          
+
+
