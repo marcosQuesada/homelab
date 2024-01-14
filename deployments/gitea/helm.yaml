@@ -9,3 +9,7 @@ spec:
   version: 9.5.1
   targetNamespace: gitea
   createNamespace: true
+  valuesContent: |-
+      gitea:
+        admin: 
+          existingSecret: gitea-admin-secret
