@@ -2,7 +2,6 @@ apiVersion: external-secrets.io/v1beta1
 kind: ClusterSecretStore
 metadata:
   name: fake
-  namespace: external-secrets
 spec:
   provider:
     fake:
@@ -17,24 +16,3 @@ spec:
           valueMap:
             foo: example
             other: thing
----
-apiVersion: external-secrets.io/v1beta1
-kind: ExternalSecret
-metadata:
-  name: example
-  namespace: external-secrets
-spec:
-  refreshInterval: 1h
-  secretStoreRef:
-    name: fake
-    kind: ClusterSecretStore
-  target:
-    name: secret-to-be-created
-  data:
-    - secretKey: foo_bar
-      remoteRef:
-        key: /foo/bar
-        version: v1
-  dataFrom:
-    - extract:
-        key: /foo/baz

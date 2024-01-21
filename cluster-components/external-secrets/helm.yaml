@@ -3,12 +3,10 @@ apiVersion: helm.cattle.io/v1
 kind: HelmChart
 metadata:
   name: external-secrets
-  namespace: external-secrets
+  namespace: flux-system
 spec:
   repo: https://charts.external-secrets.io
   chart: external-secrets
   version: 0.9.11
   targetNamespace: external-secrets
   createNamespace: true
-#  valuesContent: |-
-#    installCRDs: true

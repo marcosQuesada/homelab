@@ -1,0 +1,42 @@
+---
+apiVersion: external-secrets.io/v1beta1
+kind: ExternalSecret
+metadata:
+  name: example
+  namespace: default
+spec:
+  refreshInterval: 1h
+  secretStoreRef:
+    name: fake
+    kind: ClusterSecretStore
+  target:
+    name: example-secret
+  data:
+    - secretKey: foo_bar
+      remoteRef:
+        key: /foo/bar
+        version: v1
+  dataFrom:
+    - extract:
+        key: /foo/baz
+---
+apiVersion: external-secrets.io/v1beta1
+kind: ExternalSecret
+metadata:
+  name: example-foo
+  namespace: default
+spec:
+  refreshInterval: 1h
+  secretStoreRef:
+    name: fake
+    kind: ClusterSecretStore
+  target:
+    name: example-secret-foo
+  data:
+    - secretKey: foo_bar
+      remoteRef:
+        key: /foo/bar
+        version: v1
+  dataFrom:
+    - extract:
+        key: /foo/baz
