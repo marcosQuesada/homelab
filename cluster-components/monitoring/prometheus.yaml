@@ -23,3 +23,20 @@ spec:
           - secretName: prometheus-local-tls
             hosts:
               - prometheus.k3s.homelab.hack
+    grafana: 
+      admin:
+        existingSecret: "grafana-admin"
+        userKey: admin-user
+        passwordKey: admin-password
+      ingress:
+        enabled: true
+        annotations:
+          kubernetes.io/ingress.class: nginx
+        hosts:
+          - grafana.k3s.homelab.hack
+        paths:
+          - /
+        tls: 
+          - secretName: grafana-local-tls
+            hosts:
+              - grafana.k3s.homelab.hack
