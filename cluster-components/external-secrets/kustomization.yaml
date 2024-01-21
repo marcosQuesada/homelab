@@ -4,4 +4,4 @@ kind: Kustomization
 namespace: external-secrets
 resources:
   - helm.yaml
-#  - fake-store.yaml
+  - fake-store.yaml
