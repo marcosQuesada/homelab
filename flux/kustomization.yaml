@@ -11,6 +11,5 @@ spec:
   sourceRef:
     kind: GitRepository
     name: homelab
-  targetNamespace: flux-system
   timeout: 3m0s
   wait: true
