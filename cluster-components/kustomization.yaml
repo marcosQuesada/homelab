@@ -5,4 +5,4 @@ resources:
   - ./gitea
   - ./argo-cd
   - ./external-secrets
-#  - ./monitoring
+  - ./monitoring
