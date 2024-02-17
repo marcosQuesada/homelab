@@ -6,3 +6,4 @@ resources:
   - ./argo-cd
   - ./external-secrets
   - ./monitoring
+  - ./backstage

@@ -1,0 +1,11 @@
+apiVersion: helm.cattle.io/v1
+kind: HelmChart
+metadata:
+  name: backstage
+  namespace: flux-system
+spec:
+  repo: https://backstage.github.io/charts
+  chart: backstage
+  version: 1.8.2
+  targetNamespace: backstage
+  createNamespace: true
